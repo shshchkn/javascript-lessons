@@ -9,7 +9,8 @@
 
 	<a href="index.html">К списку</a><br><br>
 
-	
+	<h3 id="text"></h3>
+
 	<script type="text/javascript">
 
 		/*----------------------
@@ -26,6 +27,7 @@
 		totalSum = appleCount * applePrice;
 
 		document.write('Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>');
+		document.getElementById("text").innerHTML = 'Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>';
 
 		var fam = 'White',
 			name = 'Alex',
