@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<title>Javascript Course</title>
+</head>
+<body>
+
+	<a href="index.html">К списку</a><br><br>
+
+	
+	<script type="text/javascript">
+
+		/*----------------------
+		Операции над переменными
+		----------------------*/
+
+		var appleCount = 45,
+			applePrice = 6,
+			orangeCount = 67,
+			totalCount,
+			totalSum;
+
+		totalCount = appleCount + orangeCount;
+		totalSum = appleCount * applePrice;
+
+		document.write('Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>');
+
+		var fam = 'White',
+			name = 'Alex',
+			otch = 'James';
+
+		var fio = name + ' ' + otch + ' ' + fam;
+
+		document.write(fio + '<br>');
+
+		var myStreet = '5th Avenu',
+			homeNumber = 33;
+
+		var address = myStreet + ', ' + homeNumber;
+
+		document.write(address + '<br>');
+
+		var countWater = '145',
+			countJuice = 200;
+
+		var totalLiquid = parseInt(countWater) + countJuice; // parseInt() - преобразовывает строку в число
+
+		document.write('Всего жидкости: ' + totalLiquid + ' л.<br>');
+
+	</script>
+
+</body>
+</html>
