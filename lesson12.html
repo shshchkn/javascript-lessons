@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<title>Javascript Course</title>
+</head>
+<body>
+
+	<a href="index.html">К списку</a><br><br>
+	
+	<script type="text/javascript">
+
+		/*------------------------------------------------------------------------------------
+		Введение в массивы
+		-----------------------------------------------------------------------------------*/
+
+		var week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+		var myArray = [6, 'Марс', 56, 'Венера'];
+
+		document.write(week[1] + '<br>'); // Обращение к элементу массива напрямую
+		document.write(myArray[1] + '<br>');
+
+		var number = 3;
+
+		document.write(week[number] + '<br>'); // Обращение к элементу массива через переменную
+
+		var cities = new Array('Москва', 'Лондон', 'Вашингтон'); // Создаст массив из 3 готовых элементов
+		var cities2 = new Array(5); // Создаст массив из 5 пустых элементов
+
+	</script>
+
+</body>
+</html>
