@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta charset="UTF-8">
 	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-	<a href="index.html">К списку</a><br><br>
-
 	
-	<script type="text/javascript">
-		/*
-		 * Комментарии для js
-		 */
-		// + Отлов ошибок через консоль браузера
-		document.write('Hello, <b>world</b>!\n<h1>It\'s me:)</h1>');
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			
+			<script type="text/javascript">
+				/*
+				 * Комментарии для js
+				 */
+				// + Отлов ошибок через консоль браузера
+				document.write('Hello, <b>world</b>!\n<h1>It\'s me:)</h1>');
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
 	</script>
 
 </body>
