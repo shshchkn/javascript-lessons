@@ -1,86 +1,125 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta charset="UTF-8">
 	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-	<a href="index.html">К списку</a><br><br>
-
 	
-	<script type="text/javascript">
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
 
-		/*------------------------------
-			Имена переменных
-		 -------------------------------
-		1.  Имя переменной может начинаться с буквы, знака $ или с подчеркивания _
-		2.  Имя переменной может содержать только буквы, числа, символ $ или _
-		    Нельзя использовать пробелы, тире, амперсанды, звездочки и т.д.
-		3.  Имя переменной чувствительно к регистру. Name и name - это разные переменные
-		4.  Нельзя называть переменную одним из занятых слов.
-		 ------------------------------*/
+		<section>
 
-		var $sum; // но не |var *sum;| или |var 3var;|
-		var my_car; // но не |var my-car;| или |var my car;|
-		var one_line; // обращение по тому же имени, но не |var One_line;| или |var one_Line;|
-		var thisFunction; /* но не  abstract 	
-									boolean 	
-									break 	
-									byte 	
-									case
-									catch 	
-									char 	
-									class 	
-									const 	
-									continue
-									default 	
-									do 	
-									double 	
-									else 	
-									extends
-									false 	
-									final 	
-									finally 	
-									float 	
-									for
-									function 	
-									goto 	
-									if 	
-									implements 	
-									import
-									in 	
-									instanceof 	
-									int 	
-									interface 	
-									long
-									native 	
-									new 	
-									null 	
-									package 	
-									private
-									protected 	
-									public 	
-									return 	
-									short 	
-									static
-									super 	
-									switch 	
-									synchronized 	
-									this 	
-									throw
-									throws 
-									transient 	
-									true 	
-									try 	
-									var
-									void 	
-									while 	
-									with */
+			<a href="index.html">К списку</a><br><br>
 
-		var moneySum = 120, city = 'Town', country = 'Earth'; 
+			
+			<script type="text/javascript">
 
+				/*------------------------------
+					Имена переменных
+				 -------------------------------
+				1.  Имя переменной может начинаться с буквы, знака $ или с подчеркивания _
+				2.  Имя переменной может содержать только буквы, числа, символ $ или _
+				    Нельзя использовать пробелы, тире, амперсанды, звездочки и т.д.
+				3.  Имя переменной чувствительно к регистру. Name и name - это разные переменные
+				4.  Нельзя называть переменную одним из занятых слов.
+				 ------------------------------*/
+
+				var $sum; // но не |var *sum;| или |var 3var;|
+				var my_car; // но не |var my-car;| или |var my car;|
+				var one_line; // обращение по тому же имени, но не |var One_line;| или |var one_Line;|
+				var thisFunction; /* но не  abstract 	
+											boolean 	
+											break 	
+											byte 	
+											case
+											catch 	
+											char 	
+											class 	
+											const 	
+											continue
+											default 	
+											do 	
+											double 	
+											else 	
+											extends
+											false 	
+											final 	
+											finally 	
+											float 	
+											for
+											function 	
+											goto 	
+											if 	
+											implements 	
+											import
+											in 	
+											instanceof 	
+											int 	
+											interface 	
+											long
+											native 	
+											new 	
+											null 	
+											package 	
+											private
+											protected 	
+											public 	
+											return 	
+											short 	
+											static
+											super 	
+											switch 	
+											synchronized 	
+											this 	
+											throw
+											throws 
+											transient 	
+											true 	
+											try 	
+											var
+											void 	
+											while 	
+											with */
+
+				var moneySum = 120, city = 'Town', country = 'Earth'; 
+
+			</script>
+
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
 	</script>
 
 </body>
