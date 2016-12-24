@@ -52,6 +52,16 @@ section {
 	padding: 30px;
 }
 
+section a {
+	text-decoration: none;
+	padding: 10px 30px;
+	color: #fff;
+	background: #272E3E;
+	border-radius: 15px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
 ul {
 	list-style: none;
 	padding: 0;
