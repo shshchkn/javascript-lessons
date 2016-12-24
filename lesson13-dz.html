@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<title>Javascript Course</title>
+</head>
+<body>
+
+	<a href="index.html">К списку</a><br><br>
+	
+	<script type="text/javascript">
+
+		/*
+		Домашнее задание к 13-му уроку.
+
+		1. Создайте массив с фруктами: апельсин, банан, груша.
+		2. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
+		3. С помощью методов, изученных в предыдущем уроке,  добавьте в конец массива два фрукта - яблоко и ананас, а в  начало массива - грейпфрут.
+		4. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
+		5. С помощью методов, изученных в предыдущем уроке,  удалите  из массива последний и первый элемент.
+		6. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
+		*/
+
+		var fruits = ['апельсин', 'банан', 'груша'];
+
+		document.write('<b>ФРУКТЫ</b><br>В корзине (шт.): ' + fruits.length + '<br>');
+
+		fruits.push('яблоко', 'ананас');
+		fruits.unshift('грейпфрут');
+
+		document.write('После покупок стало (шт.): ' + fruits.length + '<br>');
+
+		fruits.pop();
+		fruits.shift();
+
+		document.write('После поедания осталось (шт.): ' + fruits.length + '<br>');
+
+	</script>
+
+</body> 
+</html>
