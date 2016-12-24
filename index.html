@@ -62,9 +62,12 @@
 			$(this).text(i + 1);
 		});
 		$(window).on('load', function () {
-			$('.wrapper').css( 'padding-bottom', $('footer').height() );
-			$('footer').css( 'margin-top', -($('footer').height()) );
-			$('section ul').css( 'height', $(window).height() - $('header').height() - $('footer').height() -60 + 'px' );
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
 		});
 	</script>
 
