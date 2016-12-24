@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta charset="UTF-8">
 	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-	<a href="index.html">К списку</a><br><br>
 	
-	<script type="text/javascript">
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
 
-		/*
-		Домашнее задание к 12-му уроку.
+		<section>
 
-		Создайте два массива.
-		1-й - это массив из пяти стран на ваш выбор.
-		2-й - это массив количества населения в этих странах (этот массив состоит исключительно из цифр).
+			<a href="index.html">К списку</a><br><br>
+			
+			<script type="text/javascript">
 
-		А затем с помощью метода document.write() выведите на экран
-		пять строк, где каждая строка - это назване страны и численность ее населения.
-		*/
+				/*
+				Домашнее задание к 12-му уроку.
 
-		var countries = ['Россия', 'Китай', 'Франция', 'Германия', 'Англия'];
-		var population = [142.5, 1355, 66.26, 81, 63.75];
+				Создайте два массива.
+				1-й - это массив из пяти стран на ваш выбор.
+				2-й - это массив количества населения в этих странах (этот массив состоит исключительно из цифр).
 
-		document.write(
-			countries[0] + ' - население: <b>' + population[0] + ' млн.</b> чел.<br>' + 
-			countries[1] + ' - население: <b>' + population[1] + ' млн.</b> чел.<br>' + 
-			countries[2] + ' - население: <b>' + population[2] + ' млн.</b> чел.<br>' + 
-			countries[3] + ' - население: <b>' + population[3] + ' млн.</b> чел.<br>' + 
-			countries[4] + ' - население: <b>' + population[4] + ' млн.</b> чел.<br>'
-		);
+				А затем с помощью метода document.write() выведите на экран
+				пять строк, где каждая строка - это назване страны и численность ее населения.
+				*/
 
+				var countries = ['Россия', 'Китай', 'Франция', 'Германия', 'Англия'];
+				var population = [142.5, 1355, 66.26, 81, 63.75];
+
+				document.write(
+					countries[0] + ' - население: <b>' + population[0] + ' млн.</b> чел.<br>' + 
+					countries[1] + ' - население: <b>' + population[1] + ' млн.</b> чел.<br>' + 
+					countries[2] + ' - население: <b>' + population[2] + ' млн.</b> чел.<br>' + 
+					countries[3] + ' - население: <b>' + population[3] + ' млн.</b> чел.<br>' + 
+					countries[4] + ' - население: <b>' + population[4] + ' млн.</b> чел.<br>'
+				);
+
+			</script>
+
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
 	</script>
 
 </body>
