@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+	
+			<script type="text/javascript">
+
+				/*----------
+				Метод splice
+				----------*/
+
+				var students = ['Григорий Щепкин', 'Тамара Андреева', 'Василий Уткин', 'Петр Смирнов', 'Алексей Петров'];
+
+				students.splice(3, 2); // доходит до id=3 и удаляет 2 элемента
+
+				document.write(students + '<br>'); // Григорий Щепкин,Тамара Андреева,Василий Уткин
+
+				students.splice(2, 0, 'Виктор Логинов', 'Денис Шаталин'); // доходит до id=2, ничего не удаляет, т.к. 2-ой параметр '0' и добавляет перед ним, что прописано дальше
+
+				document.write(students + '<br>'); // Григорий Щепкин,Тамара Андреева,Виктор Логинов,Денис Шаталин,Василий Уткин
+
+				students.splice(1, 2, 'Валерий Баринов', 'Никита Михалков'); // доходит до id=1, удаляет 2 элемента и заменяет их на прописанное дальше
+
+				document.write(students + '<br>'); // Григорий Щепкин,Валерий Баринов,Никита Михалков,Денис Шаталин,Василий Уткин
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
