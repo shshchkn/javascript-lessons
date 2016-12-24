@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 14-му уроку.
+
+				У Вас есть массив, про который заранее известно, что в нем точно больше одного элемента.  
+				Но сколько именно - неизвестно. Пусть это будет такой массив с фруктами:
+				var fruits = ["яблоко", "апельсин", "груша", "гранат"];
+				Напомню, что по условиям Вы не знаете сколько точно в нем элементов, их может быть и 100  и 200.
+				Ваша задача состоит в том, чтобы с помощью метода splice заменить в массиве  
+				предпоследний фрукт на "ананас" и вывести весь массив на экран. 
+
+				Когда это будет сделано, проверьте свой код на таком массиве:
+				var fruits = ["банан", "мандарин", "манго"]; 
+				В этом массиве у Вас мандарин должен будет замениться на ананас.
+				*/
+
+				var fruits = ["яблоко", "апельсин", "груша", "гранат"];
+				var elem = fruits.length - 2;
+
+				fruits.splice( elem, 1, 'ананас');
+
+				document.write(fruits + '<br>');
+
+				/**********************************************/
+
+				var fruits = ["банан", "мандарин", "манго"];
+
+				fruits.splice( fruits.length - 2, 1, 'ананас');
+
+				document.write(fruits);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
