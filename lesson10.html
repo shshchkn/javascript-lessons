@@ -1,56 +1,95 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta charset="UTF-8">
 	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
 
-	<a href="index.html">К списку</a><br><br>
+		<section>
 
-	<h3 id="text"></h3>
+			<a href="index.html">К списку</a><br><br>
 
-	<script type="text/javascript">
+			<h3 id="text"></h3>
 
-		/*----------------------
-		Операции над переменными
-		----------------------*/
+			<script type="text/javascript">
 
-		var appleCount = 45,
-			applePrice = 6,
-			orangeCount = 67,
-			totalCount,
-			totalSum;
+				/*----------------------
+				Операции над переменными
+				----------------------*/
 
-		totalCount = appleCount + orangeCount;
-		totalSum = appleCount * applePrice;
+				var appleCount = 45,
+					applePrice = 6,
+					orangeCount = 67,
+					totalCount,
+					totalSum;
 
-		document.write('Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>');
-		document.getElementById("text").innerHTML = 'Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>';
+				totalCount = appleCount + orangeCount;
+				totalSum = appleCount * applePrice;
 
-		var fam = 'White',
-			name = 'Alex',
-			otch = 'James';
+				document.write('Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>');
+				document.getElementById("text").innerHTML = 'Всего фруктов: ' + totalCount + ' руб.; Цена за яблоки: ' + totalSum + ' руб.<br>';
 
-		var fio = name + ' ' + otch + ' ' + fam;
+				var fam = 'White',
+					name = 'Alex',
+					otch = 'James';
 
-		document.write(fio + '<br>');
+				var fio = name + ' ' + otch + ' ' + fam;
 
-		var myStreet = '5th Avenu',
-			homeNumber = 33;
+				document.write(fio + '<br>');
 
-		var address = myStreet + ', ' + homeNumber;
+				var myStreet = '5th Avenu',
+					homeNumber = 33;
 
-		document.write(address + '<br>');
+				var address = myStreet + ', ' + homeNumber;
 
-		var countWater = '145',
-			countJuice = 200;
+				document.write(address + '<br>');
 
-		var totalLiquid = parseInt(countWater) + countJuice; // parseInt() - преобразовывает строку в число
+				var countWater = '145',
+					countJuice = 200;
 
-		document.write('Всего жидкости: ' + totalLiquid + ' л.<br>');
+				var totalLiquid = parseInt(countWater) + countJuice; // parseInt() - преобразовывает строку в число
 
+				document.write('Всего жидкости: ' + totalLiquid + ' л.<br>');
+
+			</script>
+
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
 	</script>
 
 </body>
