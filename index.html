@@ -3,49 +3,70 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Javascript Course</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<style type="text/css">
-		ul {
-			list-style: disc;
-		}
-		ul li {
-			margin-bottom: 10px;
-		}
-		ul li a {
-			text-decoration: none;
-			color: #333;
-			font-size: 20px;
-		}
-		ul li a:hover {
-			color: #095c7d;
-		}
-	</style>
-	<ul>
-		<li><a href="lesson5.html">Урок 5</a></li>
-		<li><a href="lesson6.html">Урок 6</a></li>
-		<li><a href="lesson7.html">Урок 7</a></li>
-		<li><a href="lesson8.html">Урок 8</a></li>
-		<li><a href="lesson9.html">Урок 9</a></li>
-		<li><a href="lesson10.html">Урок 10</a></li>
-		<li><a href="lesson11.html">Урок 11</a></li>
-		<li><a href="lesson11-dz.html">Домашнее задание к 11 уроку</a></li>
-		<li><a href="lesson12.html">Урок 12</a></li>
-		<li><a href="lesson12-dz.html">Домашнее задание к 12 уроку</a></li>
-		<li><a href="lesson13.html">Урок 13</a></li>
-		<li><a href="lesson13-dz.html">Домашнее задание к 13 уроку</a></li>
-		<li><a href="lesson14.html">Урок 14</a></li>
-		<li><a href="lesson14-dz.html">Домашнее задание к 14 уроку</a></li>
-		<li><a href="lesson15.html">Урок 15</a></li>
-		<li><a href="lesson16.html">Урок 16</a></li>
-		<li><a href="lesson17.html">Урок 17</a></li>
-		<li><a href="lesson18.html">Урок 18</a></li>
-		<li><a href="lesson19.html">Урок 19</a></li>
-		<li><a href="lesson20.html">Урок 20</a></li>
-		<li><a href="lesson21.html">Урок 21</a></li>
-		<li><a href="lesson22.html">Урок 22</a></li>
-		<li><a href="lesson23.html">Урок 23</a></li>
-		<li><a href="lesson24.html">Урок 24</a></li>
-	</ul>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+			<ul>
+				<li><span id="list"></span><a href="lesson5.html">Урок 5</a></li>
+				<li><span id="list"></span><a href="lesson6.html">Урок 6</a></li>
+				<li><span id="list"></span><a href="lesson7.html">Урок 7</a></li>
+				<li><span id="list"></span><a href="lesson8.html">Урок 8</a></li>
+				<li><span id="list"></span><a href="lesson9.html">Урок 9</a></li>
+				<li><span id="list"></span><a href="lesson10.html">Урок 10</a></li>
+				<li><span id="list"></span><a href="lesson11.html">Урок 11</a></li>
+				<li><span id="list"></span><a href="lesson11-dz.html">Домашнее задание к 11 уроку</a></li>
+				<li><span id="list"></span><a href="lesson12.html">Урок 12</a></li>
+				<li><span id="list"></span><a href="lesson12-dz.html">Домашнее задание к 12 уроку</a></li>
+				<li><span id="list"></span><a href="lesson13.html">Урок 13</a></li>
+				<li><span id="list"></span><a href="lesson13-dz.html">Домашнее задание к 13 уроку</a></li>
+				<li><span id="list"></span><a href="lesson14.html">Урок 14</a></li>
+				<li><span id="list"></span><a href="lesson14-dz.html">Домашнее задание к 14 уроку</a></li>
+				<li><span id="list"></span><a href="lesson15.html">Урок 15</a></li>
+				<li><span id="list"></span><a href="lesson16.html">Урок 16</a></li>
+				<li><span id="list"></span><a href="lesson17.html">Урок 17</a></li>
+				<li><span id="list"></span><a href="lesson18.html">Урок 18</a></li>
+				<li><span id="list"></span><a href="lesson19.html">Урок 19</a></li>
+				<li><span id="list"></span><a href="lesson20.html">Урок 20</a></li>
+				<li><span id="list"></span><a href="lesson21.html">Урок 21</a></li>
+				<li><span id="list"></span><a href="lesson22.html">Урок 22</a></li>
+				<li><span id="list"></span><a href="lesson23.html">Урок 23</a></li>
+				<li><span id="list"></span><a href="lesson24.html">Урок 24</a></li>
+			</ul>
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			$('.wrapper').css( 'padding-bottom', $('footer').height() );
+			$('footer').css( 'margin-top', -($('footer').height()) );
+			$('section ul').css( 'height', $(window).height() - $('header').height() - $('footer').height() -60 + 'px' );
+		});
+	</script>
+
 </body>
 </html>
