@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<title>Javascript Course</title>
+</head>
+<body>
+
+	<a href="index.html">К списку</a><br><br>
+	
+	<script type="text/javascript">
+
+		/*-------------------------------------------
+		Св-во length, добавление и удаление элементов
+		-------------------------------------------*/
+
+		var week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+
+		var count = week.length; // получит кол-во элементов в массиве week
+
+		document.write('Кол-во элементов в массиве [week]: ' + count + '<br>');
+
+		var students = ['Григорий Щепкин', 'Тамара Андреева', 'Василий Уткин', 'Петр Смирнов'];
+
+		students.push('Алексей Петров'); // push() - добавляет элемент в конец массива
+		students.unshift('Виктор Тихонов'); // unshift() - добавляет элемент в начало массива
+
+		document.write('Кол-во элементов в массиве [students]: ' + students.length + '<br>');
+		document.write('Студент: ' + students[0] + '<br>');
+
+		students.pop(); // pop() - удалит элемент с конца массива
+
+		document.write('Кол-во элементов в массиве после удаления [students]: ' + students.length + '<br>');
+		document.write('Последний студент в массиве: ' + students[students.length - 1] + '<br>'); 
+		// students[students.length - 1]; - автоматически выведет последний элемент массива.
+
+		students.shift(); // shift() - удалит элемент с начала массива
+
+		document.write('Кол-во элементов в массиве после удаления [students]: ' + students.length + '<br>');
+		document.write('Первый студент в массиве: ' + students[0] + '<br>');
+
+	</script>
+
+</body> 
+</html>
