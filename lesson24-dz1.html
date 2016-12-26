@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Первое домашнее задание к 24-му уроку.<br><br>
+
+				Ваша задача написать код, который бы спрашивал у пользователя  сколько ему лет.<br> 
+				Вы должны  проанализировать полученный ответ, и если человеку больше 20 лет, то вам<br> 
+				нужно вывести на экран  фразу "Вы уже взрослый человек!", а если меньше 20 или равно 20,<br> 
+				то вывести "Вы еще молоды, у Вас  все впереди!".<br><br>
+
+				При этом возьмем допущение, что пользователь правильно укажет свой возраст, т.е. напишет<br> 
+				именно  число, без дополнительных символов., т.к. различные проверки мы будет учиться писать позже.<br><br>
+
+				var ask = prompt('Сколько Вам лет?');<br><br>
+
+				if (ask > 20) {<br>
+				&nbsp;&nbsp;document.write('Вы уже взрослый человек!');<br>
+				} else {<br>
+				&nbsp;&nbsp;document.write('Вы еще молоды, у Вас  все впереди!');<br>
+				}<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Первое домашнее задание к 24-му уроку.
+
+				Ваша задача написать код, который бы спрашивал у пользователя  сколько ему лет. 
+				Вы должны  проанализировать полученный ответ, и если человеку больше 20 лет, то вам 
+				нужно вывести на экран  фразу "Вы уже взрослый человек!", а если меньше 20 или равно 20, 
+				то вывести "Вы еще молоды, у Вас  все впереди!".
+
+				При этом возьмем допущение, что пользователь правильно укажет свой возраст, т.е. напишет 
+				именно  число, без дополнительных символов., т.к. различные проверки мы будет учиться писать позже.
+				*/
+				
+				var ask = prompt('Сколько Вам лет?');
+
+				if (ask > 20) {
+					document.write('Вы уже взрослый человек!');
+				} else {
+					document.write('Вы еще молоды, у Вас  все впереди!');
+				}
+				
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
