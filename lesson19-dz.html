@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 19-му уроку.<br><br>
+
+				Напишите множественное условие для действий при различных сигналах светофора.<br>
+				Если сигнал красный, то надо стоять, иначе, если желтый, то надо приготовиться, а <br>иначе, можно идти.<br><br>
+
+				var redLight = 0,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;yellowLight = 0,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;greenLight = 1;<br><br>
+
+				if (redLight == true) {<br>
+				&nbsp;&nbsp;document.write('Attention, red light, don\'t go!');<br>
+				} else if (yellowLight == true) {<br>
+				&nbsp;&nbsp;document.write('Attention, yellow light, get ready!');<br>
+				} else {<br>
+				&nbsp;&nbsp;document.write('Attention, green light, you can go!');<br>
+				}<br><br>
+
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 19-му уроку.
+
+				Напишите множественное условие для действий при различных сигналах светофора.
+				Если сигнал красный, то надо стоять, иначе, если желтый, то надо приготовиться, а иначе, можно идти.
+				*/
+
+				var redLight = 0,
+					yellowLight = 0,
+					greenLight = 1;
+
+				if (redLight == true) {
+					document.write('Attention, red light, don\'t go!');
+				} else if (yellowLight == true) {
+					document.write('Attention, yellow light, get ready!');
+				} else {
+					document.write('Attention, green light, you can go!');
+				}
+				
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
