@@ -76,13 +76,24 @@ ul li {
 	position: relative;
 }
 
+ul li.title {
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 10px 20px;
+	display: table;
+	color: #fff;
+	background: #272E3E;
+}
+
 ul li #list {
 	position: absolute;
 	text-align: center;
-	line-height: 30px;
+	line-height: 26px;
 	left: 0;
-	height: 30px;
-	width: 30px;
+	top: 0;
+	padding: 0;
+	height: 26px;
+	width: 26px;
 	border-radius: 50%;
 	display: inline-block;
 	color: #fff;
@@ -92,8 +103,8 @@ ul li #list {
 ul li a {
 	text-decoration: none;
 	color: #333;
-	font-size: 20px;
-	line-height: 30px;
+	font-size: 16px;
+	line-height: 26px;
 }
 
 ul li a:hover {
