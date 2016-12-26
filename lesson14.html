@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +23,22 @@
 		<section>
 
 			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				var students = ['Григорий Щепкин', 'Тамара Андреева', 'Василий Уткин', 'Петр Смирнов', 'Алексей Петров'];<br><br>
+
+				students.splice(3, 2); // доходит до id=3 и удаляет 2 элемента<br><br>
+
+				document.write(students); // Григорий Щепкин,Тамара Андреева,Василий Уткин<br><br>
+
+				students.splice(2, 0, 'Виктор Логинов', 'Денис Шаталин'); // доходит до id=2, ничего не удаляет, т.к. 2-ой параметр '0' и добавляет перед ним, что прописано дальше<br><br>
+
+				document.write(students); // Григорий Щепкин,Тамара Андреева,Виктор Логинов,Денис Шаталин,Василий Уткин<br><br>
+
+				students.splice(1, 2, 'Валерий Баринов', 'Никита Михалков'); // доходит до id=1, удаляет 2 элемента и заменяет их на прописанное дальше<br><br>
+
+				document.write(students); // Григорий Щепкин,Валерий Баринов,Никита Михалков,Денис Шаталин,Василий Уткин<br><br><br><br>
+			</code>
 	
 			<script type="text/javascript">
 
