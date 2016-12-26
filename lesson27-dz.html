@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 27-му уроку.<br><br>
+
+				Создать функцию fio(), которая поочередно запрашивает у пользователя имя, фамилию и отчество,<br> 
+				а в  качестве результата своей работы возвращает ФИО одной строкой с пробелами между словами.<br><br>
+
+				function fio () {<br>
+				&nbsp;&nbsp;var surname = prompt('Ваша фамилия?'),<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;name = prompt('Ваше имя?'),<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;patronymic = prompt('Ваше отчество?');<br>
+				&nbsp;&nbsp;var fullName = 'Вас зовут - ' + surname + ' ' + name + ' ' + patronymic;<br>
+				&nbsp;&nbsp;return fullName;<br>
+				};<br><br>
+
+				alert(fio());<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 27-му уроку.
+
+				Создать функцию fio(), которая поочередно запрашивает у пользователя имя, фамилию и отчество, 
+				а в  качестве результата своей работы возвращает ФИО одной строкой с пробелами между словами.
+				*/
+
+				
+				function fio () {
+					var surname = prompt('Ваша фамилия?'),
+						name = prompt('Ваше имя?'),
+						patronymic = prompt('Ваше отчество?');
+					var fullName = 'Вас зовут - ' + surname + ' ' + name + ' ' + patronymic;
+					return fullName;
+				};
+
+				document.write(fio());
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
