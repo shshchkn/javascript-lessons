@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 29-му уроку.<br><br>
+
+				В качестве домашнеего задания задайте человеку вопрос через метод  prompt().<br> 
+				Правильный ответ заранее поместите в перменную var answer.<br>  
+				Правильный ответ запишите полностью маленькими буквами.<br><br>
+
+				Когда получите ответ от пользователя, переведите его в нижний регистр<br> 
+				и сравните с ответом из переменной.<br><br>
+
+				Если ответ верный, то выведите сообщение, что ответ верный, если нет,<br> 
+				то сообщение о том, что  неверный.<br><br>
+
+				После того как скрипт будет готов, попробуйте сами ответить на вопрос, вводя его разными буквами.<br><br>
+
+				Попробуйте на время убрать метод toLowerCase() из скрипта и посмотрите, что произойдет.<br><br>
+
+				var answer = 'елка';<br><br>
+
+				var ques = prompt('Зимой и летом одним цветом?');<br>
+				var newQues = ques.toLowerCase();<br><br>
+
+				if (answer == newQues) {<br>
+				&nbsp;&nbsp;document.write('Ответ верный!');<br>
+				} else {<br>
+				&nbsp;&nbsp;document.write('Ответ НЕ верный!');<br>
+				}<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 29-му уроку.
+
+				В качестве домашнеего задания задайте человеку вопрос через метод  prompt(). 
+				Правильный ответ заранее поместите в перменную var answer.  
+				Правильный ответ запишите полностью маленькими буквами.
+
+				Когда получите ответ от пользователя, переведите его в нижний регистр 
+				и сравните с ответом из переменной.
+
+				Если ответ верный, то выведите сообщение, что ответ верный, если нет, 
+				то сообщение о том, что  неверный.
+
+				После того как скрипт будет готов, попробуйте сами ответить на вопрос, вводя его разными буквами.
+
+				Попробуйте на время убрать метод toLowerCase() из скрипта и посмотрите, что произойдет.
+				*/
+				
+				var answer = 'елка';
+
+				var ques = prompt('Зимой и летом одним цветом?');
+				var newQues = ques.toLowerCase();
+
+				if (answer == newQues) {
+					document.write('Ответ верный!');
+				} else {
+					document.write('Ответ НЕ верный!');
+				}
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
