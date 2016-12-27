@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 34-му уроку.<br><br>
+
+				Написать функцию, которая получает в качестве параметра переменную<br> 
+				содержащую строку и с помощью регулярного выражения проверяет,<br> 
+				начинается ли содержимое этой переменной с цифры или нет.<br><br> 
+
+				Результат своей работы функция выводит на экран.<br><br>
+
+				Переменная для передачи в функцию: var forTesting = "8 пингвинов и 9 карасей.";<br><br>
+
+				var forTesting = "8 пингвинов и 9 карасей."; // дана переменная<br><br>
+
+				function watch(myVar) { // задаем функции параметр строки<br>
+				&nbsp;&nbsp;var regV = /^\d/; // записываем в переменную рег. выражение, которое требуется<br>
+				&nbsp;&nbsp;if (myVar.search(regV) == -1) { // проверяем условие <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;document.write('Строка начинается НЕ с цифры');<br>
+				&nbsp;&nbsp;} else {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;document.write('Строка начинается с цифры');<br>
+				&nbsp;&nbsp;}<br>
+				}<br><br>
+
+				watch(forTesting); // вызываем нашу функцию с параметром переменной для теста<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 34-му уроку.
+
+				Написать функцию, которая получает в качестве параметра переменную 
+				содержащую строку и с помощью регулярного выражения проверяет, 
+				начинается ли содержимое этой переменной с цифры или нет. 
+
+				Результат своей работы функция выводит на экран.
+
+				Переменная для передачи в функцию: var forTesting = "8 пингвинов и 9 карасей.";
+				*/
+
+				var forTesting = "8 пингвинов и 9 карасей.";
+
+				function watch(myVar) {
+					var regV = /^\d/;
+					if (myVar.search(regV) == -1) {
+						document.write('Строка начинается НЕ с цифры');
+					} else {
+						document.write('Строка начинается с цифры');
+					}
+				}
+
+				watch(forTesting);
+
+				// var myIndex = '450100 - Мой индекс';
+				// var regV = /^\d{6}$/;    //  \d - выражение от 0 до 9 http://www.exlab.net/tools/sheets/regexp.html
+				// var result = myIndex.search(regV);
+
+				// document.write(result);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
