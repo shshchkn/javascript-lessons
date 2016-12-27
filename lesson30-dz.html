@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 30-му уроку.<br><br>
+
+				У вас есть переменная<br> 
+				var mySite = "http://site.com";<br><br>
+
+				Вам надо написать функцию, которая примет эту переменную в качестве параметра,<br> 
+				а в теле функции проверит с помощью метода indexOf, встречается ли в этой<br> 
+				переменной подстрока "http://".<br><br>
+
+				Если да, то вывести на экран сообщение, что в названии сайта присутствует<br> 
+				указание протокола "http://", иначе - вывести, что не присутствует.<br><br>
+
+				var mySite = "http://site.com";<br><br>
+
+				function check(myString) { // передаем функции параметр строки<br>
+				&nbsp;&nbsp;if (myString.indexOf('http://') == -1) { // проверяем на несовпадение<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;document.write('В названии сайта НЕ присутствует указание протокола \"http://\"!'); // выводим сообщение true<br>
+				&nbsp;&nbsp;} else {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;document.write('В названии сайта присутствует указание протокола \"http://\"!'); // выводим сообщение false<br>
+				&nbsp;&nbsp;}<br>
+				}<br><br>
+
+				check(mySite); // вызываем функцию с параметром нашей переменной<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 30-му уроку.
+
+				У вас есть переменная 
+				var mySite = "http://site.com";
+
+				Вам надо написать функцию, которая примет эту переменную в качестве параметра, 
+				а в теле функции проверит с помощью метода indexOf, встречается ли в этой 
+				переменной подстрока "http://".
+
+				Если да, то вывести на экран сообщение, что в названии сайта присутствует 
+				указание протокола "http://", иначе - вывести, что не присутствует.
+				*/
+
+				var mySite = "http://site.com";
+
+				function check(myString) {
+					if (myString.indexOf('http://') == -1) {
+						document.write('В названии сайта НЕ присутствует указание протокола \"http://\"!');
+					} else {
+						document.write('В названии сайта присутствует указание протокола \"http://\"!');
+					}
+				}
+
+				check(mySite);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
