@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Второе домашнее задание к 28-му уроку.<br><br>
+
+				1. Напишите функцию, которая в качестве параметра получает строку, <br> 
+				а как результат своей работы вычисляет, в строке больше 10 символов или меньше.<br><br>
+
+				2. Запросите у пользователя ввод любого слова и поместите этот ввод в переменную.<br><br>
+
+				3. Вызовите вашу функцию, а в качестве параметра передайте то самое слово,<br> 
+				которое вы  сохранили в  переменную.<br><br>
+
+				4. Напечатайте на экран сообщение о том, больше 10 символов в этом слове, меньше или равно 10.<br><br>
+
+				function strLength(myString) { // передаем параметр строки<br>
+				&nbsp;&nbsp;if (myString.length < 10) { // проверяем условие по кол-ву знаков<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;var result = 'В слове меньше 10 знаков';<br>
+				&nbsp;&nbsp;} else if (myString.length > 10) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;var result = 'В слове больше 10 знаков'<br>
+				&nbsp;&nbsp;} else {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;var result = 'В слове ровно 10 знаков'<br>
+				&nbsp;&nbsp;}<br>
+				&nbsp;&nbsp;return result; // возвращаем результат<br>
+				}<br><br>
+
+				var askUser = prompt('Введите слово?'); // запрашиваем слово<br><br>
+
+				var ansUser = strLength(askUser); // записываем вызов функции в переменную<br><br>
+
+				document.write(ansUser); // выводим сообщение на экран<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Второе домашнее задание к 28-му уроку.
+
+				1. Напишите функцию, которая в качестве параметра получает строку, 
+				а как результат  свой работы вычисляет, в строке больше 10 символов или меньше.
+
+				2. Запросите у пользователя ввод любого слова и поместите этот ввод в переменную.
+
+				3. Вызовите вашу функцию, а в качестве параметра передайте то самое слово, 
+				которое вы  сохранили в  переменную. 
+
+				4. Напечатайте на экран сообщенеи о том, больше 10 символов в этом слове, меньше или равно 10.
+				*/
+				
+				function strLength(myString) {
+					if (myString.length < 10) {
+						var result = 'В слове меньше 10 знаков';
+					} else if (myString.length > 10) {
+						var result = 'В слове больше 10 знаков'
+					} else {
+						var result = 'В слове ровно 10 знаков'
+					}
+					return result;
+				}
+
+				var askUser = prompt('Введите слово?');
+
+				var ansUser = strLength(askUser);
+
+				document.write(ansUser);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
