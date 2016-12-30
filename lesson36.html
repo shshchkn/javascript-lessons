@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+
+			</code>
+	
+			<script type="text/javascript">
+
+				/*------------
+				Метод match()
+				------------*/
+				
+				var testStr = 'Вчера я нашел 5 сайтов: www.mysite.ru, www.html.mysite.ru, https://my-super-site.ru, www.mysite.com, http://my-site.ru, https://www.mysuper-site.ru и Biggestsite.RU, но, вообще, мне больше нравится домен в зоне .ru';
+
+				var regV = /(https?:\/\/)?(www\.)?[a-z0-9-\.]{2,}\.ru/gi;
+				/*
+				(https?:\/\/)? - протокол http:// необязательно, но может быть, также и s? может быть
+				(www\.)? - необязательный компонент, www может быть, а может и не быть
+				[a-z0-9-] - диапазон все лат. буквы и цифры могут быть в имени сайта
+				{2,} - квантор, минимум 2 символа максимума нет
+				\.ru - ищем .ru
+				gi - модификаторы, ищем глобально и регистронезависимо
+
+				В итоге получилось:
+				/(https?:\/\/)?(www\.)?[a-z0-9-\.]{2,}\.ru/gi
+				регулярное выражение, которое будет искать имена сайтов
+				с протоколом http:// или https://
+				содержащих или несодержащих www.
+				имеющих в названии минимум 2 символа, как лат. буквы, так и цифры
+				имеющих имя поддомена и домен .ru
+				и все это глобально и регистронезависимо
+				*/
+
+				var result = testStr.match(regV);
+
+				for (var k = 0; k < result.length; k++) {
+					document.write(result[k] + '<br>');
+				}
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
