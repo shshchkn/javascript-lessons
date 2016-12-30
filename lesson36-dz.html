@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 36-му уроку.<br><br>
+
+				Вам нужно написать регулярное выражение для поиска в тексте номера кредитной карты.<br>
+				Текст: "Иван вчера потерял свою кредитку, ее номер 1178-9087-2384-8787.<br> 
+				Поэтому он пошел в банк и описал ситуацию. Там пошли ему навстречу и выдали<br> 
+				новую кредитку под номером:  1103-8899-0811-1722".<br><br>
+
+				Напомню, что кредитные карты имеют формат: xxxx-xxxx-xxxx-xxxx<br><br>
+
+				Например: 1178-9087-2384-8787<br><br>
+
+				При этом, вам нужно найти только те номера, в которых первые 4 цифры содержат только 0, или 1 или 2, или 3,<br>
+				т.е. вас, например, устроит номер 1103-8899-0811-1722, но не устроит 1490-8877-7345-8111 (т.к. здесь<br> присутствует цифры 4 и 9, не удовлетворяющие нашим условиям).<br><br>
+
+				При этом номер кредитки нужно не просто найти, а вытащить в переменную result и вывести на экран.<br><br>
+
+				var message = "Иван вчера потерял свою кредитку, ее номер 1178-9087-2384-8787.<br>
+				Поэтому он пошел в банк и описал ситуацию.<br>
+				Там пошли ему навстречу и выдали новую кредитку под номером:  1103-8899-0811-1722";<br><br>
+
+				var regV = /[0-3]{4}-\d{4}-\d{4}-\d{4}/g;<br><br>
+
+				var result = message.match(regV);<br><br>
+
+				for (var k = 0; k < result.length; k++) {<br>
+				&nbsp;&nbsp;document.write(result[k] + '< br >');<br>
+				}<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 36-му уроку.
+
+				Вам нужно написать регулярное выражение для поиска в тексте номера кредитной карты.
+				Текст: "Иван вчера потерял свою кредитку, ее номер 1178-9087-2384-8787. 
+				Поэтому он пошел в банк и описал ситуацию. Там пошли ему навстречу и выдали 
+				новую кредитку под номером:  1103-8899-0811-1722".
+
+				Напомню, что кредитные карты имеют формат: xxxx-xxxx-xxxx-xxxx
+
+				Например: 1178-9087-2384-8787
+
+				При этом, вам нужно найти только те номера, в которых первые 4 цифры содержат только 0, или 1 или 2, или 3,
+				т.е. вас, например, устроит номер 1103-8899-0811-1722, но не устроит 1490-8877-7345-8111 (т.к. здесь присутствует цифры 4 и 9, не удовлетворяющие нашим условиям).
+
+				При этом номер кредитки нужно не просто найти, а вытащить в переменную result и вывести на экран.
+				*/
+
+				var message = "Иван вчера потерял свою кредитку, ее номер 1178-9087-2384-8787. Поэтому он пошел в банк и описал ситуацию. Там пошли ему навстречу и выдали новую кредитку под номером:  1103-8899-0811-1722";
+
+				var regV = /[0-3]{4}-\d{4}-\d{4}-\d{4}/g;
+
+				var result = message.match(regV);
+
+				for (var k = 0; k < result.length; k++) {
+					document.write(result[k] + '<br>');
+				}
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
