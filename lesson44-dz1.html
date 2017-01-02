@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Первое домашнее задание к 44-му уроку.<br><br>
+
+				Ваша задача, используя методы объекта date, вывести на экран<br> 
+				время в формате: час:минута:секунда (пример: 14:23:11)<br><br>
+
+				При этом, если секунды и минуты попадают в интервал от 0 до 10,<br> 
+				они должны выводиться с нулем  впереди.<br>
+				т.е. вместо 18:7:3 у Вас должно выводиться 18:07:03<br><br>
+				
+				var date = new Date(); // записываем объект в новую переменную, чтобы получить к нему доступ<br><br>
+
+				var hours = date.getHours(),<br>
+				&nbsp;&nbsp;minutes = date.getMinutes(),<br>
+				&nbsp;&nbsp;seconds = date.getSeconds();<br><br>
+
+				if (minutes < 10) {<br>
+				&nbsp;&nbsp;minutes = "0" + minutes;<br>
+				}<br><br>
+
+				if (seconds < 10) {<br>
+				&nbsp;&nbsp;seconds = "0" + seconds;<br>
+				}<br><br>
+
+				document.write('Текущее время: ' + hours + ':' + minutes + ':' + seconds);<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Первое домашнее задание к 44-му уроку.
+
+				Ваша задача, используя методы объекта date, вывести на экран 
+				время в формате: час:минута:секунда (пример: 14:23:11)
+
+				При этом, если секунды и минуты попадают в интервал от 0 до 10, 
+				они должны выводиться с нулем  впереди.
+				т.е. вместо 18:7:3 у Вас должно выводиться 18:07:03
+				*/
+				
+				var date = new Date(); // записываем объект в новую переменную, чтобы получить к нему доступ
+
+				var hours = date.getHours(),
+					minutes = date.getMinutes(),
+					seconds = date.getSeconds();
+
+				if (minutes < 10) {
+					minutes = "0" + minutes;
+				}
+
+				if (seconds < 10) {
+					seconds = "0" + seconds;
+				}
+
+				document.write('Текущее время: <b>' + hours + ':' + minutes + ':' + seconds + '<b>');
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
