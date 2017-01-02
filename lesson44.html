@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+
+			</code>
+	
+			<script type="text/javascript">
+
+				/*-----------
+				Object Date()
+				-----------*/
+				
+				var time = new Date(); // записываем объект в новую переменную, чтобы получить к нему доступ
+
+				var year = time.getFullYear(); // получаем текущий год
+
+				document.write('Сейчас - ' + year + ' год<br>');
+
+				var month = time.getMonth() + 1; // получаем текущий месяц
+
+				document.write('Сейчас - ' + month + ' месяц<br>');
+
+				var day = time.getDate(); // получаем число месяца
+
+				document.write('Сейчас - ' + day + ' число<br>');
+
+				var dayWeek = time.getDay(); // получаем день недели
+
+				document.write('Сейчас - ' + dayWeek + ' день<br>');
+
+				var hour = time.getHours(); // получаем время (часы)
+
+				document.write('Сейчас - ' + hour + ' час<br>');
+
+				var minutes = time.getMinutes(); // получаем время (минуты)
+
+				document.write('Сейчас - ' + minutes + ' минуты<br>');
+
+				var seconds = time.getSeconds(); // получаем время (секунды)
+
+				document.write('Сейчас - ' + seconds + ' секунд<br>');
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
