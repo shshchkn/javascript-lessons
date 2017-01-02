@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 41-му уроку.<br><br>
+
+				Напишите функцию, которая получает в качестве параметра массив и перебирает его на предмет<br> 
+				преобразования чисел из простых, в такие, у которых есть два знака после запятой., т.е., если<br> 
+				в исходном массиве было число 11, то на выходе должно быть 11.00.<br><br> 
+
+				В результате работы функции массив должен изменить свои значения.<br><br>
+
+				Массив для примера:<br>
+				var randSimbol = [10.5, 15, 112, 77.6];<br><br>
+
+				function change(anyArray) {<br>
+				&nbsp;&nbsp;for (var k = 0; k < anyArray.length; k++) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;anyArray[k] = anyArray[k].toFixed(2);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;document.write(anyArray[k] + '< br >');<br>
+				&nbsp;&nbsp;}<br>
+				}<br><br>
+
+				change(randSimbol);<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 41-му уроку.
+
+				Напишите функцию, которая получает в качестве параметра массив и перебирает его на предмет 
+				преобразования чисел из простых, в такие, у которых есть два знака после запятой., т.е., если 
+				в исходном массиве было число 11, то на выходе должно быть 11.00. 
+
+				В результате работы функции массив должен изменить свои значения.
+
+				Массив для примера:
+				var randSimbol = [10.5, 15, 112, 77.6];
+				*/
+
+				var randSimbol = [10.5, 15, 112, 77.6];
+
+				function change(anyArray) {
+					for (var k = 0; k < anyArray.length; k++) {
+						anyArray[k] = anyArray[k].toFixed(2);
+						document.write(anyArray[k] + '<br>');
+					}
+				}
+
+				change(randSimbol);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
