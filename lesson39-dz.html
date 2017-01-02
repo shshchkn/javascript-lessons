@@ -37,9 +37,9 @@
 				function myModule(array) { // ф-ция принимает параметр массива<br>
 				&nbsp;&nbsp;for (var k = 0; k < array.length; k++) { // счетчик перебирает элементы массива<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;if (isNaN(array[k])) { // проверяем каждый элемент число ли это<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('Это нечисло!< br >');<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('Элемент массива ' + array[k] + ' - НЕ число!< br >');<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('Это число!< br >');<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('Элемент массива ' + array[k] + ' - число!< br >');<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 				&nbsp;&nbsp;}<br>
 				}<br><br>
@@ -63,9 +63,9 @@
 				function myModule(array) {
 					for (var k = 0; k < array.length; k++) {
 						if (isNaN(array[k])) {
-							document.write('Это нечисло!<br>');
+							document.write('Элемент массива ' + array[k] + ' - НЕ число!<br>');
 						} else {
-							document.write('Это число!<br>');
+							document.write('Элемент массива ' + array[k] + ' - число!<br>');
 						}
 					}
 				}
