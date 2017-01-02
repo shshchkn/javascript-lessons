@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*-----------------------------------------
+				Math.round() - округляет значение;
+				Math.ceil() - округляет в большую сторону;
+				Math.floor() - округляет в меньшую сторону;
+				-----------------------------------------*/
+				
+				var age = 80.93; // ~ 81
+
+				age = Math.round(age);
+				document.write(age + '<br>');
+
+
+				var age = 80.13; // ~ 80
+
+				age = Math.ceil(age);
+				document.write(age + '<br>');
+
+
+				var age = 80.87; // ~ 81
+
+				age = Math.floor(age);
+				document.write(age + '<br>');
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
