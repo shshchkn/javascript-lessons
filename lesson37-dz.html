@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 37-му уроку.<br><br>
+
+				Написать функцию, которая меняет слэши на дефисы.<br><br>
+
+				Ваша задача состоит в том, чтобы написать функцию, которая принимает два параметра.<br>
+				1. Переменная, в которой содержится номер телефона, записанный с помощью слэшей.<br>
+				var tel = "8/927/31/10/765";<br><br>
+
+				2. Знак, на который нужно заменить слэш.<br>
+				var sign = "-";<br><br>
+
+				Внутри этой функции, с помощью регулярного выражения и метода replace()<br> 
+				вам надо заменить все слэши на указанный во втором параметре знак.<br><br>
+
+				В качестве результата, нужно вывести уже измененный телефонный номер на экран.<br><br>
+
+				Подсказка. Помните, что слэш это символ, который используется для создания<br> 
+				регулярного выражения (также  как и точка, скобки и т.д.) поэтому,<br> 
+				чтобы сообщить волшебнику, что надо искать именно слэш,<br> 
+				вы должны экранировать его обратным слэшем.<br><br>
+
+				var tel = "8/927/31/10/765",<br>
+				&nbsp;&nbsp;sign = "-"; // по условию даны 2 переменные<br><br>
+
+				function change(tel, sign) { // функция принимает 2 параметра<br>
+				&nbsp;&nbsp;var regV = /\//g; // создаем рег. выражение<br>
+				&nbsp;&nbsp;var result = tel.replace(regV, sign); // записываем в переменную результат<br>
+				&nbsp;&nbsp;document.write(result); // выводимна экран<br>
+				}<br><br>
+
+				change(tel, sign); // вызываем функцию<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 37-му уроку.
+
+				Написать функцию, которая меняет слэши на дефисы.
+
+				Ваша задача состоит в том, чтобы написать функцию, которая принимает два параметра.
+				1. Переменная, в которой содержится номер телефона, записанный с помощью слэшей.
+				var tel = "8/927/31/10/765";
+
+				2. Знак, на который нужно заменить слэш.
+				var sign = "-";
+
+				Внутри этой функции, с помощью регулярного выражения и метода replace() 
+				вам надо заменить все слэши на указанный во втором параметре знак.
+
+				В качестве результата, нужно вывести уже измененный телефонный номер на экран.
+
+				Подсказка. Помните, что слэш это символ, который используется для создания 
+				регулярного выражения (также  как и точка, скобки и т.д.) поэтому, 
+				чтобы сообщить волшебнику, что надо искать именно слэш, 
+				вы должны экранировать его обратным слэшем.
+				*/
+
+				var tel = "8/927/31/10/765",
+					sign = "-";
+
+				function change(tel, sign) {
+					var regV = /\//g;
+					var result = tel.replace(regV, sign);
+					document.write(result);
+				}
+
+				change(tel, sign);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
