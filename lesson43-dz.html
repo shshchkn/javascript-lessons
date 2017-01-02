@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 43-му уроку.<br><br>
+
+				Вам нужно создать функцию, которая будет принимать три параметра.<br>
+				1. Массив, состоящий из 10 пустых элементов.<br>
+				2. Начальное значение интервала<br>
+				3. Конечное значение интервала.<br><br>
+
+				Функция должна заполнить пустой массив случайными числами в указанном диапазоне и вывести<br> 
+				содержимое массива на экран.<br><br>
+
+				Исходный массив для примера:<br><br>
+				var randomArray = new Array(10); // пустой массив из 10 элементов<br><br>
+
+				function myRandom (from, to)  { // ф-ция рандомной генерации чисел в определенном диапазоне<br>
+				&nbsp;&nbsp;return Math.floor((Math.random() * (to - from + 1)) + from);<br>
+				}<br><br>
+
+				function myModule(anyArray, min, max) { // ф-ция принимает 3 параметра: массив, начало и конец диапазона<br>
+				&nbsp;&nbsp;for (var k = 0; k < anyArray.length; k++) { // перебираем элементы массива<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;anyArray[k] = myRandom(min, max); // присваиваем каждому элементу случайное число из нашего диапазона с помощью ф-ции генерации сверху<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;document.write(anyArray[k] + '< br >');<br>
+				&nbsp;&nbsp;}<br>
+				}<br><br>
+
+				var start = 1,<br>
+				&nbsp;&nbsp;finish = 99; // заносим значения диапазона в переменные<br><br>
+
+				document.write('В массив помещаются числа от ' + start + ' до ' + finish + ':< br >');<br><br>
+
+				myModule(randomArray, start, finish); // вызываем ф-цию, передав 3 параметра<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 43-му уроку.
+
+				Вам нужно создать функцию, которая будет принимать три параметра.
+				1. Массив, состоящий из 10 пустых элементов.
+				2. Начальное значение интервала
+				3. Конечное значение интервала.
+
+				Функция должна заполнить пустой массив случайными числами в указанном диапазоне и вывести 
+				содержимое массива на экран.
+
+				Исходный массив для примера:
+				var randomArray = new Array(10);
+				*/
+
+				function myRandom (from, to)  {
+					return Math.floor((Math.random() * (to - from + 1)) + from);
+				}
+
+				var randomArray = new Array(10);
+
+				function myModule(anyArray, min, max) {  
+					for (var k = 0; k < anyArray.length; k++) {
+						anyArray[k] = myRandom(min, max);
+						document.write(anyArray[k] + '<br>');
+					}
+				}
+
+				var start = 1,
+					finish = 99;
+
+				document.write('В массив помещаются числа от ' + start + ' до ' + finish + ':<br>');
+
+				myModule(randomArray, start, finish);
+				
+				// var rand = Math.round(Math.random() * 100);
+
+				// //document.write(rand);
+
+				// function myRandom (from, to)  { // ф-ция генерации случайного числа в определенном диапазоне
+				// 	return Math.floor((Math.random() * (to - from + 1)) + from);
+				// }
+
+				// var result = myRandom(0, 600); // записываем вызов ф-ции в переменную
+
+				// document.write(result); // выводим на экран эту переменную
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
