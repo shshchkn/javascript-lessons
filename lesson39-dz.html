@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+				Домашнее задание к 39-му уроку.<br><br>
+
+				Написать функцию, которая получает в качестве параметра массив,<br> 
+				затем перебирает все его элементы и выводит на экран, какая <br>
+				информация содержится в каждом элементе: число или нечисло.<br>
+				Массив для примера: var randSimbol = ["Молоко", 77, 11, "Мед", -88];<br><br>
+
+				var randSimbol = ["Молоко", 77, 11, "Мед", -88];<br><br>
+
+				function myModule(array) { // ф-ция принимает параметр массива<br>
+				&nbsp;&nbsp;for (var k = 0; k < array.length; k++) { // счетчик перебирает элементы массива<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;if (isNaN(array[k])) { // проверяем каждый элемент число ли это<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('Это нечисло!< br >');<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write('Это число!< br >');<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				&nbsp;&nbsp;}<br>
+				}<br><br>
+
+				myModule(randSimbol); // вызываем ф-цию, передав ей в качестве параметра наш массив<br><br>
+			</code>
+	
+			<script type="text/javascript">
+
+				/*
+				Домашнее задание к 39-му уроку.
+
+				Написать функцию, которая получает в качестве параметра массив, 
+				затем перебирает все его элементы и выводит на экран, какая 
+				информация содержится в каждом элементе: число или нечисло.
+				Массив для примера: var randSimbol = ["Молоко", 77, 11, "Мед", -88];
+				*/
+
+				var randSimbol = ["Молоко", 77, 11, "Мед", -88];
+
+				function myModule(array) {
+					for (var k = 0; k < array.length; k++) {
+						if (isNaN(array[k])) {
+							document.write('Это нечисло!<br>');
+						} else {
+							document.write('Это число!<br>');
+						}
+					}
+				}
+
+				myModule(randSimbol);
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
