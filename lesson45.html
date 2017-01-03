@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Course</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<header>
+			<div class="header__inner">
+				<div class="header__logo">
+					<img src="img/js.png" width="50" height="50" alt="Javascript lessons">
+				</div>
+				<div class="header__text">
+					<h1>Javascript lessons</h1>
+				</div>
+			</div>
+		</header>
+
+		<section>
+
+			<a href="index.html">К списку</a><br><br>
+
+			<code>
+
+			</code>
+	
+			<script type="text/javascript">
+
+				/*-----------
+				Object Date()
+				-----------*/
+				
+				var date = new Date(); // записываем объект в новую переменную, чтобы получить к нему доступ
+
+				document.write(date.getTime() + '<br>'); // кол-во секунд с 1970 до н.в.
+
+				var from1970 = Math.round(date.getTime() / (1000 * 60 * 60 * 24)); // вычисляем кол-во дней с 1970 до н.в.
+
+				document.write(from1970 + '<br>');
+
+				var ny = new Date(2018, 0, 1, 0, 0, 0); // точка отсчета 1 января 2018 г.
+
+				var from1970toNy = Math.round(ny.getTime() / (1000 * 60 * 60 * 24)); // вычисляем кол-во дней с 1970 до 2018 НГ
+
+				document.write('До 2018 НГ осталось (дн.): ' + (from1970toNy - from1970) + '<br>');
+
+				var week = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+
+				document.write('Это будет - ' + week[ny.getDay()] + '<br>');
+
+				var test = new Date(1000 * 60 * 60 * 24); // кол-во секунд в сутках
+
+				document.write(test + '<br>');
+
+			</script>
+			
+		</section>
+	</div>
+
+	<footer>
+		<div class="footer__inner">
+			&copy; 2016
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$('span#list').each(function (i) {
+			$(this).text(i + 1);
+		});
+		$(window).on('load', function () {
+			var windowH = $(window).height(),
+				headerH = $('header').height(),
+				footerH = $('footer').height();
+			$('.wrapper').css( 'padding-bottom', footerH );
+			$('footer').css( 'margin-top', -(footerH) );
+			$('section ul').css( 'height', windowH - headerH - footerH -60 );
+		});
+	</script>
+
+</body>
+</html>
